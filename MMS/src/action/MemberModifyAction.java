@@ -19,6 +19,14 @@ public class MemberModifyAction implements Action {
 		MemberVO oldMemberVO = memberModifyService.getOldMemberVO(memberId);
 		MemberVO newMemberVO = consoleUtil.getNewMemberVO(oldMemberVO, scanner);
 		
+		boolean modifySuccess = memberModifyService.modifyMemberVO(newMemberVO);
+		
+		if(modifySuccess) {
+			consoleUtil.printModifySuccessMessage(memberId);
+		}
+		else {
+			consoleUtil.printModifyFailMessage(memberId);
+		}
 	}
 
 }

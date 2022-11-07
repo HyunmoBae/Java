@@ -7,7 +7,14 @@ public class MemberVO {
 	private String memberAddr;
 	private String memberEmail;
 	private String memberGender;
+	private int memberGeneration;
 	
+	public int getMemberGeneration() {
+		return memberGeneration;
+	}
+	public void setMemberGeneration(int memberGeneration) {
+		this.memberGeneration = memberGeneration;
+	}
 	public String getMemberId() {
 		return memberId;
 	}
@@ -46,6 +53,7 @@ public class MemberVO {
 	}
 	@Override
 	public String toString() {
-		return "회원 아이디 : " + memberId + ", 회원 이름 : " + memberName + ", 회원 이메일 : " + memberEmail + ", 회원 주소 : " + memberAddr;
+		return "회원 아이디 : " + memberId + ", 회원 이름 : " + memberName + ", 회원 이메일 : " + memberEmail + ", 회원 주소 : " + memberAddr
+				+ ", 회원 나이대 : " + memberGeneration;
 	}
 }

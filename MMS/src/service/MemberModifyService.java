@@ -16,4 +16,16 @@ public class MemberModifyService {
 		return oldMemberVO;
 	}
 
+	public boolean modifyMemberVO(MemberVO newMemberVO) {
+		boolean modifySuccess = false;
+		for (int i = 0; i < MemberUI.memberList.size(); i++) {
+			if(MemberUI.memberList.get(i).getMemberId().contentEquals(newMemberVO.getMemberId())) {
+				MemberUI.memberList.set(i, newMemberVO);
+				modifySuccess = true;
+				break;
+			}
+		}
+		return modifySuccess;
+	}
+
 }
