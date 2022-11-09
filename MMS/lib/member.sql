@@ -82,6 +82,15 @@ SELECT DISTINCT memberGender FROM member;
 --별칭
 SELECT memberAge * 2 AS doubleage FROM member;
 
+CREATE TABLE member1(
+	memberId VARCHAR2(20) PRIMARY KEY,
+	memberName VARCHAR2(20) NOT NULL,
+	memberAge NUMBER NOT NULL,
+	memberAddr VARCHAR2(50) NOT NULL,
+	memberEmail VARCHAR2(50) NOT NULL,
+	memberGender CHAR(1) NOT NULL,
+	memberGeneration NUMBER NOT NULL
+)
 
 
 
