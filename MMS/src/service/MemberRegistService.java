@@ -35,6 +35,10 @@ public class MemberRegistService {
 		int insertCount = memberDAO.insertMember(newMemberVO);
 		if(insertCount > 0) {
 			registSuccess = true;
+			commit(con);
+		}
+		else {
+			rollback(con);
 		}
 		close(con);
 		return registSuccess;

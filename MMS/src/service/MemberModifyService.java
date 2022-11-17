@@ -47,9 +47,13 @@ public class MemberModifyService {
 		int updateCount = memberDAO.updateMember(newMemberVO);
 		if(updateCount > 0) {
 			modifySuccess = true;
+			commit(con);
+		}
+		else {
+			rollback(con);
 		}
 		close(con);
 		return modifySuccess;
-			
 	}
+
 }

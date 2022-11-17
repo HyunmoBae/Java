@@ -18,7 +18,7 @@ public class ArrayListTest {
 		}
 		
 		//삽입
-		list.add(1, "삽입");
+		list.add(0, "삽입");
 		System.out.println("list.add(1, \"삽입1\")");
 		for(int i = 0;i < list.size(); i++) {
 			System.out.println(list.get(i));

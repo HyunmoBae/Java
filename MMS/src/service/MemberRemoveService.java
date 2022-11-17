@@ -1,7 +1,6 @@
 package service;
 
-import static db.JDBCUtil.close;
-import static db.JDBCUtil.getConnection;
+import static db.JDBCUtil.*;
 
 import java.sql.Connection;
 
@@ -29,6 +28,10 @@ public class MemberRemoveService {
 		int deleteCount = memberDAO.deleteMember(memberId);
 		if (deleteCount > 0 ) {
 			removeSuccess = true;
+			commit(con);
+		}
+		else {
+			rollback(con);
 		}
 		close(con);
 		return removeSuccess;

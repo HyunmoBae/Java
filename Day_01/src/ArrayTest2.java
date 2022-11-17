@@ -7,11 +7,14 @@ public class ArrayTest2 {
 		
 		int score[] = {100,90,80,70,60};
 		
+		
+		
 		for (int i = 0; i < score.length; i++) {
 			sum += score[i];
 		}
 		average = sum / (float)score.length;
 		
+		int x = 5;
 		System.out.println("총점 : " + sum);
 		System.out.println("평균 : " + average);
 	}

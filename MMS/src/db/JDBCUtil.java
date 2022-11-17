@@ -19,6 +19,7 @@ public class JDBCUtil {
 			Connection con = null;
 			try {
 				con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","java","java");
+				con.setAutoCommit(false);
 				System.out.println("connection success!!");
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -48,4 +49,18 @@ public class JDBCUtil {
 		}
 	}
 	//트랜젝션 처리....
+	public static void commit(Connection con) {
+		try {
+			con.commit();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	public static void rollback(Connection con) {
+		try {
+			con.rollback();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }
