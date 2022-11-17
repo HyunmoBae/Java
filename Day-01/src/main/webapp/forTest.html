@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+	#inputArea{
+		width : 200px;
+		height : 200px;
+		margin : auto;
+		border : 1px solid red;
+		text-align: center;
+		}
+	input[type = "submit"]{
+		margin-top: 10px
+	}
+</style>
+</head>
+<body>
+<section  #id = "inputArea">
+	<form action = "forTest" method = "GET">
+		<lable for = "message">메시지 : </lable>
+		<input type = "text" name = "message" id = "message"><br>
+		<lable for = "repeat">회수: </lable>
+		<input type = "number" name = "repeat" id = "repeat"><br>
+	<input type = "submit" value = "전송"/> 
+	</form>
+</section>
+</body>
+</html>
