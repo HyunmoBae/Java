@@ -221,7 +221,7 @@ public class MemberDAO {
 				LoginMember.setMemberAddr(rs.getString("memberAddr"));
 				LoginMember.setMemberAge(rs.getInt("memberAge"));
 				LoginMember.setMemberEmail(rs.getString("memberEmail"));
-				LoginMember.setMemberGender(rs.getString("memberEmail"));
+				LoginMember.setMemberGender(rs.getString("memberGender"));
 				LoginMember.setMemberGeneration(rs.getInt("memberGeneration"));
 				LoginMember.setMemberId(rs.getString("memberId"));
 				LoginMember.setMemberName(rs.getString("memberName"));
