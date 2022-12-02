@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href = "dogShoppingList.dog">개상품 목록 보기</a>
+<a href = "dogList.dog">개상품 목록 보기</a>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <%@ page import = "java.util.ArrayList" %>
 <%
 	ArrayList<DogVO> dogList = (ArrayList<DogVO>)request.getAttribute("dogList");
+	ArrayList<String> todayImageList = (ArrayList<String>)request.getAttribute("todayImageList");
 %>
 <!DOCTYPE html>
 <html>
@@ -12,6 +13,12 @@
 <title>Insert title here</title>
 <style>
 	#dogListArea{
+		width : 650px;
+		margin : auto;
+		border : 1px solid red;
+	}
+	#todayImageListArea{
+		margin-top: 20px;
 		width : 650px;
 		margin : auto;
 		border : 1px solid red;
@@ -27,6 +34,11 @@
 	.dogListImage{
 		width : 150px;
 		height : 150px;
+		border : none;
+	}
+	.todayImage{
+		width : 100px;
+		height : 100px;
 		border : none;
 	}
 </style>
@@ -71,5 +83,29 @@
 		}
 	%>			
 	</section>
+	
+	<%
+		if(todayImageList != null && todayImageList.size() != 0 ){
+			
+	%>
+	<section id = "todayImageListArea">
+		<h1>오늘 본 개 상품</h1>
+		<table>
+			<tr>
+				<%
+					for(int i = 0; i< todayImageList.size();i++){
+				%>
+					<td>
+						<img src = "images/<%=todayImageList.get(i)%>.jpg" class = "todayImage"/>
+					</td>
+				<%
+					}
+				%>						
+			</tr>
+		</table>
+	</section>
+	<% 
+		}
+	%>
 </body>
 </html>

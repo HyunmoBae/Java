@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
+import action.DogCartAddAction;
+import action.DogCartListAction;
 import action.DogListAction;
 import action.DogViewAction;
 import vo.ActionForward;
@@ -40,7 +42,7 @@ public class DogFrontController extends HttpServlet {
 		//Action 인터페이스를 이용한 다형성을 활용해서 각 요청을 처리함.
 		ActionForward forward = null;
 		
-		if(command.contentEquals("/dogShoppingList.dog")) {
+		if(command.contentEquals("/dogList.dog")) {
 			action = new DogListAction();
 			try {
 				forward = action.execute(request, response);
@@ -49,6 +51,20 @@ public class DogFrontController extends HttpServlet {
 			}
 		} else if(command.contentEquals("/dogView.dog")) {
 			action = new DogViewAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.contentEquals("/dogCartAdd.dog")) {
+			action = new DogCartAddAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.contentEquals("/dogCartList.dog")) {
+			action = new DogCartListAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

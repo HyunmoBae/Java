@@ -50,13 +50,16 @@
 <body>
 <section id="wrap">
 	<header id="top">
-		<h1><%=dogVO.getDogKind() %></h1>
+		<h1>
+		<span style = "float:left"><%=dogVO.getDogKind() %>개 정보</span>
+		<span style = "float:right">조회수 : <%=dogVO.getDogReadCount() %></span>
+		</h1>
 	</header>
 	<section id = "main">
 		<aside id = "main_left">
 			<img src="images/<%=dogVO.getDogImage()%>.jpg" class = "bigImage"/>
 		</aside>
-		<section id="main_right">
+		<section id="main_right" style = "font-size: xx-Large;">
 			<b>개 원산지 : <%=dogVO.getDogCountry() %></b></br>
 			<b>개 신장 : <%=dogVO.getDogHeight() %></b></br>
 			<b>개 체중 : <%=dogVO.getDogWeight() %></b></br>
@@ -64,8 +67,8 @@
 			<b>개 설명 : <%=dogVO.getDogContent() %></b></br>
 		</section>
 	</section>
-	<footer id="bottom">
-		<a href = "">쇼핑 계속하기</a>&nbsp;<a href = "">장바구니 담기</a>
+	<footer id="bottom" style= "font-size: xx-Larze; text-align: center;">
+		<a href = "dogList.dog">쇼핑 계속하기</a>&nbsp;<a href = "dogCartAdd.dog?dogId=<%=dogVO.getDogid()%>">장바구니 담기</a>
 	</footer>
 </section>
 </body>
